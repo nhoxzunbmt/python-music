@@ -1,0 +1,26 @@
+{% extends "music/base.html" %} 
+
+{% block page_title %}
+            Add new album
+{% endblock page_title %}
+
+
+{% block body %} 
+
+
+
+{% if error_message %}
+<p>
+    <strong>{{ error_message }}</strong>
+</p>
+{% endif %}
+
+<form action="" method="post" accept-charset="utf-8">
+    {% csrf_token %}
+    {% include 'music/form-template.html' %}
+
+    <input type="submit" value="Save"></input>
+</form>
+
+{% endblock body %}
+
