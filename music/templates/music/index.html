@@ -5,15 +5,35 @@
 
 {% block body %} 
 {% if all_albums %}
-<ul>
-    {% for album in all_albums %}
-    <li>
-        <a href="{% url 'music:detail' album.id %}">
-            {{ album.album_title }}
-        </a>
-    </li>
-    {% endfor %}
-</ul>
+
+
+
+<div class="container">
+    <div class="row">
+        <ul>
+            {% for album in all_albums %}
+            <li class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="height: 300px;">
+                <img width="200px" src="{{ album.album_logo.url }}" alt="{{ album.album_title }}">
+        
+                <a href="{% url 'music:detail' album.id %}">
+                    {{ album.album_title }}
+                </a>
+                <div class="clearfix"></div>
+                <a href="{% url 'music:album_update' album.id %}" class="btn btn-default">Edit</a>
+
+                
+                <form action="{% url 'music:album_delete' album.id %}" method="post">{% csrf_token %}
+                    <button type="submit" class="btn btn-default">Delete</a>
+                </form>  
+            
+            </li>
+            {% endfor %}
+        </ul>  
+    </div>
+</div>
+
+
+
 {% else %}
 <h3>You don't have any albums</h3>
 {% endif %} {% endblock body %}

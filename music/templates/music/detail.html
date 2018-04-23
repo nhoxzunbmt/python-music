@@ -8,7 +8,7 @@
 {% block body %} 
 <h1>{{ album.album_title }}</h1>
 
-<img width="200px" src="{{ album.album_logo }}" alt="{{ album.album_title }}">
+<img width="200px" src="{{ album.album_logo.url }}" alt="{{ album.album_title }}">
 
 <h3>{{ album.artist }}</h3>
 
