@@ -12,6 +12,10 @@ from rest_framework import renderers
 from rest_framework.response import Response
 from rest_framework import viewsets
 from rest_framework.decorators import action
+import jwt
+import json
+from rest_framework import views
+from django.http import HttpResponse
 
 @api_view(['GET'])
 def api_root(request, format=None):
@@ -19,6 +23,7 @@ def api_root(request, format=None):
         'users': reverse('user-list', request=request, format=format),
         'snippets': reverse('snippet-list', request=request, format=format)
     })
+
 
 class SnippetViewSet(viewsets.ModelViewSet):
     """
@@ -40,6 +45,7 @@ class SnippetViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+
 class SnippetHighlight(generics.GenericAPIView):
     queryset = Snippet.objects.all()
     renderer_classes = (renderers.StaticHTMLRenderer,)
@@ -49,13 +55,14 @@ class SnippetHighlight(generics.GenericAPIView):
         return Response(snippet.highlighted)
 
 
-
 class SnippetList(generics.ListCreateAPIView):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer
+
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+
 
 class SnippetDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Snippet.objects.all()
@@ -74,10 +81,10 @@ class UserDetail(generics.RetrieveAPIView):
     serializer_class = UserSerializer
 
 
-
 class UserViewSet(viewsets.ReadOnlyModelViewSet):
     """
     This viewset automatically provides `list` and `detail` actions.
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
+

@@ -12,7 +12,6 @@ urlpatterns = [
     url(r'^snippets/(?P<pk>[0-9]+)/$', views.SnippetDetail.as_view(),name='snippet-detail'),
     url(r'^users/$', views.UserList.as_view(),name='user-list'),
     url(r'^users/(?P<pk>[0-9]+)/$', views.UserDetail.as_view(),name='user-detail'),
-    url(r'^coreapi action snippets list/$', schema_view),
+    url(r'^schema/$', schema_view),
+    #url(r'^login/$', views.Login.as_view(),name='login'),
 ]
-
-

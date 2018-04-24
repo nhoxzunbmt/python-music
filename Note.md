@@ -29,6 +29,9 @@ pip install djangorestframework-jsonp
 pip install djangorestframework-yaml
 pip install coreapi
 pip install coreapi-cli
+pip install djangorestframework-jwt
+pip install psycopg2
+
 
 [DATE]
 - https://arrow.readthedocs.io/en/latest/ 
@@ -39,3 +42,10 @@ pip install coreapi-cli
 
 
 http -a api:aPi123456 POST http://127.0.0.1:8000/snippets/ code="print 789"
+
+
+
+rm -f db.sqlite3
+rm -r snippets/migrations
+python manage.py makemigrations snippets
+python manage.py migrate
