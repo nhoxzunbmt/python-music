@@ -18,4 +18,24 @@
 pip install djangorestframework
 pip install markdown       # Markdown support for the browsable API.
 pip install django-filter  # Filtering support
-pip install pygments  # We'll be using this for the code highlighting
+pip install pygments  
+pip install Faker
+pip install arrow
+pip install Celery
+pip install virtualenv
+pip install httpie
+pip install djangorestframework-xml
+pip install djangorestframework-jsonp
+pip install djangorestframework-yaml
+pip install coreapi
+pip install coreapi-cli
+
+[DATE]
+- https://arrow.readthedocs.io/en/latest/ 
+[TASK-CRONJOB]
+- http://www.celeryproject.org/
+- https://scrapy.org/
+- http://pygments.org/
+
+
+http -a api:aPi123456 POST http://127.0.0.1:8000/snippets/ code="print 789"
