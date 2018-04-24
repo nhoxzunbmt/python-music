@@ -4,6 +4,7 @@
 - python manage.py createsuperuser
 - python manage.py runserver
 - python manage.py shell
+- python manage.py show_urls
 >>> from music.models import Album,Song
 >>> album1 = Album.objects.get(pk=1)
 >>> song1 = Song()

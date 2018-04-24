@@ -5,7 +5,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate,login
 from django.views.generic import View
-from .forms import UserForm
+from .forms import UserForm,LoginForm
 
 class IndexView(generic.ListView):
     template_name = 'music/index.html'
@@ -65,3 +65,12 @@ class UserFormView(View):
                     login(request,user)
                     return redirect('music:index')
         return render(request,self.template_name,{'form':form})
+
+        
+class LoginView(View):
+    form_class= LoginForm
+    template_name='registration/login.html'
+    def get(self,request):
+        form=self.form_class()
+        return render(request,self.template_name,{'form':form})
+    
