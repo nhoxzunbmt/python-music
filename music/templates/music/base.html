@@ -32,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{% url 'music:index' %}">Viberr</a>
+            <a class="navbar-brand" href="{% url 'index' %}">Viberr</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,7 +53,7 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="{% url 'music:album_add' %}">Add Album</a>
+                    <a href="{% url 'album_add' %}">Add Album</a>
                 </li>
 
                 {% if user.is_authenticated %}
@@ -61,11 +61,11 @@
                     <a href="#">Hi {{ user.username }}!</a>
                 </li>
                 <li>
-                    <a href="{% url 'music:logout' %}">Logout</a>
+                    <a href="{% url 'logout' %}">Logout</a>
                 </li>
                 {% else %}
                 <li>
-                    <a href="{% url 'music:login'  %}">Login</a>
+                    <a href="{% url 'login'  %}">Login</a>
                 </li>
                 {% endif %}
             </ul>
@@ -76,7 +76,7 @@
 
 
     {% block body %} {% endblock body %}
-
+    {% block content %} {% endblock content %}
 
 </body>
 

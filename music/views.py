@@ -31,7 +31,7 @@ class AlbumUpdate(UpdateView):
 
 class AlbumDelete(DeleteView):
     model = Album
-    success_url =  reverse_lazy('music:index')
+    success_url =  reverse_lazy('index')
 
 class UserFormView(View):
     form_class= UserForm
@@ -63,7 +63,7 @@ class UserFormView(View):
 
                 if user.is_active:
                     login(request,user)
-                    return redirect('music:index')
+                    return redirect('index')
         return render(request,self.template_name,{'form':form})
 
         

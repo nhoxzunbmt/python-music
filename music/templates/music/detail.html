@@ -19,7 +19,7 @@
 </p>
 {% endif %}
 
-<form action="{% url 'music:favorite' album.id %}" method="post" accept-charset="utf-8">
+<form action="{% url 'favorite' album.id %}" method="post" accept-charset="utf-8">
     {% csrf_token %}
     {% for song in album.song_set.all %}
         <label for="song {{ forloop.counter }}"><input type="radio" id="song{{ forloop.counter }}" name="song" value="{{ song.id }}">

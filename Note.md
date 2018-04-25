@@ -32,7 +32,7 @@ pip install coreapi
 pip install coreapi-cli
 pip install djangorestframework-jwt
 pip install psycopg2
-
+pip install django_extensions
 
 [DATE]
 - https://arrow.readthedocs.io/en/latest/ 
