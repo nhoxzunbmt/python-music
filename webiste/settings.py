@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'snippets.apps.SnippetsConfig',
     # 'accounts.apps.AccountsConfig',
     'django_extensions',
+    'learn.apps.LearnConfig',
 ]
 
 MIDDLEWARE = [
@@ -164,8 +165,14 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ),
+
+    
 }
+
+
 import datetime
 JWT_AUTH = {
 

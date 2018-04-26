@@ -29,6 +29,7 @@ urlpatterns = [
     #url(r'^api-auth/', include('rest_framework.urls')),
     url(r'^', include('snippets.urls')),
     # url(r'^', include('accounts.urls')),
+    url(r'^', include('learn.urls')),
 ]
 urlpatterns = format_suffix_patterns(urlpatterns)
 

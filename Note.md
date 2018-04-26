@@ -5,6 +5,8 @@
 - python manage.py runserver
 - python manage.py shell
 - python manage.py show_urls
+
+
 >>> from music.models import Album,Song
 >>> album1 = Album.objects.get(pk=1)
 >>> song1 = Song()
@@ -33,6 +35,7 @@ pip install coreapi-cli
 pip install djangorestframework-jwt
 pip install psycopg2
 pip install django_extensions
+pip install django-cors-headers
 
 [DATE]
 - https://arrow.readthedocs.io/en/latest/ 
@@ -42,8 +45,9 @@ pip install django_extensions
 - http://pygments.org/
 
 
-http -a api:aPi123456 POST http://127.0.0.1:8000/snippets/ code="print 789"
+http POST http://127.0.0.1:8000/api/users/login/ email="thanhloi@ringier.com.vn" password="ThanhLoi1993"
 
+curl -X POST http://127.0.0.1:8000/api/users/login/ -d "email=thanhloi@ringier.com.vn&password=ThanhLoi1993"
 
 
 rm -f db.sqlite3
