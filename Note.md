@@ -1,3 +1,5 @@
+- virtualenv -p python3 .venv
+- source .venv/bin/activate
 - python manage.py migrate
 - python manage.py makemigrations music
 - python manage.py sqlmigrate music 0001
@@ -5,7 +7,7 @@
 - python manage.py runserver
 - python manage.py shell
 - python manage.py show_urls
-
+- sudo lsof -t -i tcp:8000 | xargs kill -9
 
 >>> from music.models import Album,Song
 >>> album1 = Album.objects.get(pk=1)
@@ -18,6 +20,7 @@
 >>> album1.song_set.count()
 >>> album1.song_set.create(song_title='I love bacon', file_type = 'mp3')
 
+pip install django
 pip install djangorestframework
 pip install markdown       # Markdown support for the browsable API.
 pip install django-filter  # Filtering support
@@ -33,9 +36,12 @@ pip install djangorestframework-yaml
 pip install coreapi
 pip install coreapi-cli
 pip install djangorestframework-jwt
-pip install psycopg2
+pip install psycopg2-binary
 pip install django_extensions
 pip install django-cors-headers
+pip install djangorestframework
+pip install pygments
+
 
 [DATE]
 - https://arrow.readthedocs.io/en/latest/ 

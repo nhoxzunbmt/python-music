@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'companies.apps.CompaniesConfig',
     'snippets.apps.SnippetsConfig',
-    # 'accounts.apps.AccountsConfig',
     'django_extensions',
     'learn.apps.LearnConfig',
 ]

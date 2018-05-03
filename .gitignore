@@ -2,5 +2,8 @@
 /.vscode/
 /.idea/
 __pycache__/
+/companies/__pycache__/
 *.py[cod]
 *$py.class
+/.venv
+*.pyc
