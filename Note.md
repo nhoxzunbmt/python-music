@@ -1,12 +1,17 @@
 - virtualenv -p python3 .venv
-- source .venv/bin/activate
-- python manage.py migrate
-- python manage.py makemigrations music
-- python manage.py sqlmigrate music 0001
-- python manage.py createsuperuser
-- python manage.py runserver
-- python manage.py shell
-- python manage.py show_urls
+- source .venv/bin/activate 
+- deactivate
+- virtualenv -p python3 ~/.venv/music
+- source ~/.venv/music/bin/activate
+- find . -name "*.pyc" -exec git rm -f "{}" \;
+
+- python3 manage.py migrate
+- python3 manage.py makemigrations music
+- python3 manage.py sqlmigrate music 0001
+- python3 manage.py createsuperuser
+- python3 manage.py runserver
+- python3 manage.py shell
+- python3 manage.py show_urls
 - sudo lsof -t -i tcp:8000 | xargs kill -9
 
 >>> from music.models import Album,Song
@@ -20,27 +25,27 @@
 >>> album1.song_set.count()
 >>> album1.song_set.create(song_title='I love bacon', file_type = 'mp3')
 
-pip install django
-pip install djangorestframework
-pip install markdown       # Markdown support for the browsable API.
-pip install django-filter  # Filtering support
-pip install pygments  
-pip install Faker
-pip install arrow
-pip install Celery
-pip install virtualenv
-pip install httpie
-pip install djangorestframework-xml
-pip install djangorestframework-jsonp
-pip install djangorestframework-yaml
-pip install coreapi
-pip install coreapi-cli
-pip install djangorestframework-jwt
-pip install psycopg2-binary
-pip install django_extensions
-pip install django-cors-headers
-pip install djangorestframework
-pip install pygments
+pip3 install django
+pip3 install djangorestframework
+pip3 install markdown       # Markdown support for the browsable API.
+pip3 install django-filter  # Filtering support
+pip3 install pygments  
+pip3 install Faker
+pip3 install arrow
+pip3 install Celery
+pip3 install virtualenv
+pip3 install httpie
+pip3 install djangorestframework-xml
+pip3 install djangorestframework-jsonp
+pip3 install djangorestframework-yaml
+pip3 install coreapi
+pip3 install coreapi-cli
+pip3 install djangorestframework-jwt
+pip3 install psycopg2-binary
+pip3 install django_extensions
+pip3 install django-cors-headers
+pip3 install djangorestframework
+pip3 install pygments
 
 
 [DATE]
@@ -58,5 +63,5 @@ curl -X POST http://127.0.0.1:8000/api/users/login/ -d "email=thanhloi@ringier.c
 
 rm -f db.sqlite3
 rm -r snippets/migrations
-python manage.py makemigrations snippets
-python manage.py migrate
+python3 manage.py makemigrations snippets
+python3 manage.py migrate
