@@ -5,8 +5,8 @@
 - source ~/.venv/music/bin/activate
 - find . -name "*.pyc" -exec git rm -f "{}" \;
 
+- python3 manage.py makemigrations learn
 - python3 manage.py migrate
-- python3 manage.py makemigrations music
 - python3 manage.py sqlmigrate music 0001
 - python3 manage.py createsuperuser
 - python3 manage.py runserver
