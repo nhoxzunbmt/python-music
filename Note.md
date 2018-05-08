@@ -14,16 +14,18 @@
 - python3 manage.py show_urls
 - sudo lsof -t -i tcp:8000 | xargs kill -9
 
->>> from music.models import Album,Song
->>> album1 = Album.objects.get(pk=1)
->>> song1 = Song()
->>> song1.song_title = "Be len ba tap 1"
->>> song1.file_type = "mp3"
->>> song1.album = album1
->>> song1.save()
->>> album1.song_set.all()
->>> album1.song_set.count()
->>> album1.song_set.create(song_title='I love bacon', file_type = 'mp3')
+Person.objects.create(first_name="foobar")
+from music.models import Album,Song
+album1 = Album.objects.get(pk=1)
+song1 = Song()
+song1.song_title = "Be len ba tap 1"
+song1.file_type = "mp3"
+song1.album = album1
+song1.save()
+album1.song_set.all()
+album1.song_set.count()
+album1.song_set.create(song_title='I love bacon', file_type ='mp3')
+
 
 pip3 install django
 pip3 install djangorestframework
