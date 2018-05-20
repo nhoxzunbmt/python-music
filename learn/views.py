@@ -45,6 +45,9 @@ def home(request):
 
     # Entry.objects.filter(headline__exact="1")
 
+    # Entry.objects.folter(name__contains='a')
+    
+
     
     
     
