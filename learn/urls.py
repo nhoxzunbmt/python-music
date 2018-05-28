@@ -1,9 +1,10 @@
-from django.conf.urls import include, url
+from django.urls import include, path
 from learn import views
 
 
 
+
 urlpatterns = [
-    url(r'^learn/', views.home),
-    url(r'^about/', views.about),
+        path('learn/<int:year>/', views.about),
+        path('learn/test', views.current_datetime)
 ]

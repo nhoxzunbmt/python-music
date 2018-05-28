@@ -3,6 +3,7 @@ from django.http import HttpResponse,HttpResponseRedirect,FileResponse,JsonRespo
 from learn.models import Bloger,Entry,Author
 from datetime import date,datetime
 from random import randint
+import datetime
 # Create your views here.
 # HttpResponseRedirect('/about')
 
@@ -56,5 +57,11 @@ def home(request):
   
     return response
 
-def about(request):
-    return HttpResponse('About')
+def about(request, year=2005):
+    response = JsonResponse({'status' : year})
+    return response
+
+def current_datetime(request):
+    now = datetime.datetime.now()
+    html = "<html><body>It is now %s.</body></html>" % now
+    return HttpResponse(html)

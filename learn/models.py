@@ -94,4 +94,5 @@ class Entry(models.Model):
     rating = models.IntegerField()
 
     def __str__(self):
-         return self.headline
+         return self.headline 
+
