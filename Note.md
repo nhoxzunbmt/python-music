@@ -58,9 +58,9 @@ pip3 install pygments
 - http://pygments.org/
 
 
-http POST http://127.0.0.1:8000/api/users/login/ email="thanhloi@ringier.com.vn" password="ThanhLoi1993"
+http POST http://127.0.0.1:8000/api/users/login/ email="nhoxzunbmt@gmail.com" password="123456"
 
-curl -X POST http://127.0.0.1:8000/api/users/login/ -d "email=thanhloi@ringier.com.vn&password=ThanhLoi1993"
+curl -X POST http://127.0.0.1:8000/api/users/login/ -d "email=nhoxzunbmt@gmail.com&password=123456"
 
 
 rm -f db.sqlite3
