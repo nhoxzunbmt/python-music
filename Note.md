@@ -66,4 +66,4 @@ curl -X POST http://127.0.0.1:8000/api/users/login/ -d "email=nhoxzunbmt@gmail.c
 rm -f db.sqlite3
 rm -r snippets/migrations
 python3 manage.py makemigrations snippets
-python3 manage.py migrate
+python3 manage.py migrate 
